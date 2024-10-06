@@ -1,0 +1,1074 @@
+
+local player = game.Players.LocalPlayer local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "Sonic.exe the disaster 1.0 script V1.1", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+--[[
+Name = <string> - The name of the UI.
+HidePremium = <bool> - Whether or not the user details shows Premium status or not.
+SaveConfig = <bool> - Toggles the config saving in the UI.
+ConfigFolder = <string> - The name of the folder where the configs are saved.
+IntroEnabled = <bool> - Whether or not to show the intro animation.
+IntroText = <string> - Text to show in the intro animation.
+IntroIcon = <string> - URL to the image you want to use in the intro animation.
+Icon = <string> - URL to the image you want displayed on the window.
+CloseCallback = <function> - Function to execute when the window is closed.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Overpowered stuff",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "the stuff"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+OrionLib:MakeNotification({
+	Name = "Hey!",
+	Content = "Thanks for using my script! Made by Kauan230817 on roblox!",
+	Image = "rbxassetid://4483345998",
+	Time = 10
+})
+
+--[[
+Title = <string> - The title of the notification.
+Content = <string> - The content of the notification.
+Image = <string> - The icon of the notification.
+Time = <number> - The duration of the notfication.
+]]
+
+Tab:AddButton({
+	Name = "Press this first to be able to heal yourself (can break sometimes)",
+	Callback = function()
+      		local args = {
+    [1] = "healing"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Heal Yourself (heals 25 health per click also it can break sometimes because it wont run the script)",
+	Callback = function()
+      		local args = {
+    [1] = "heal",
+    [2] = game:GetService("Players").LocalPlayer.Character
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.abilities:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Cream's speed boost",
+	Callback = function()
+      		local args = {
+    [1] = "speed boost"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.abilities:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Kill yourself (not in real life lol)",
+	Callback = function()
+      		local args = {
+    [1] = "killPlayer"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.actions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Turn into minion.exe (must be dead)",
+	Callback = function()
+      		local args = {
+    [1] = "infectRequest"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Morph into Characters",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "All characters"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Morph into Tails",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "tails"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into knuckles",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "knuckles"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into eggman",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "eggman"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into amy",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "amy"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into cream",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "cream"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into sally",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "sally"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into shadow",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "shadow"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into rouge",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "rouge"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Morph into sonic.exe",
+	Callback = function()
+      		local args = {
+    [1] = "morphRequest",
+    [2] = "sonicexe"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.characterRequest:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Abilities",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Survivors Abilities"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Arm cannon (tails)",
+	Callback = function()
+      		local args = {
+    [1] = "arm cannon"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "glide (tails)",
+	Callback = function()
+      		local args = {
+    [1] = "glide"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Punch (knuckles and minions.exe)",
+	Callback = function()
+      		local args = {
+    [1] = "punch"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "block (knuckles and shadow)",
+	Callback = function()
+      		local args = {
+    [1] = "block"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "shock (eggman)",
+	Callback = function()
+      		local args = {
+    [1] = "equip shock"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "jetpack boost (eggman)",
+	Callback = function()
+      		local args = {
+    [1] = "jetpack"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "hammer attack (amy)",
+	Callback = function()
+      		local args = {
+    [1] = "hammer"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "hammer throw (amy)",
+	Callback = function()
+      		local args = {
+    [1] = "hammer throw"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "speed boost (cream)",
+	Callback = function()
+      		local args = {
+    [1] = "speed boost"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "cream glide (tails and cream)",
+	Callback = function()
+      		local args = {
+    [1] = "cream glide"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "shield (sally)",
+	Callback = function()
+      		local args = {
+    [1] = "enable shield"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "roll (sally and amy)",
+	Callback = function()
+      		local args = {
+    [1] = "roll"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "dash (shadow)",
+	Callback = function()
+      		local args = {
+    [1] = "dash"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "sensor (rouge and works for all characters)",
+	Callback = function()
+      		local args = {
+    [1] = "set sensor"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "slide (rouge)",
+	Callback = function()
+      		local args = {
+    [1] = "slide"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Section = Tab:AddSection({
+	Name = ".EXE abilities"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "attack (sonic.exe)",
+	Callback = function()
+      		local args = {
+    [1] = "attack"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "grab (sonic.exe)",
+	Callback = function()
+      		local args = {
+    [1] = "grab"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "laugh (sonic.exe",
+	Callback = function()
+      		local args = {
+    [1] = "laugh"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "invisible (sonic.exe)",
+	Callback = function()
+      		local args = {
+    [1] = "invisibility"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "decoy (sonic.exe)",
+	Callback = function()
+      		local args = {
+    [1] = "decoy"
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("remoteEvents"):WaitForChild("abilities"):FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Expressions",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "All expressions that i know"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "sad",
+	Callback = function()
+      		local args = {
+    [1] = "sad"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Happy",
+	Callback = function()
+      		local args = {
+    [1] = "happy"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "angry",
+	Callback = function()
+      		local args = {
+    [1] = "angry"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "serious",
+	Callback = function()
+      		local args = {
+    [1] = "serious"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "confused",
+	Callback = function()
+      		local args = {
+    [1] = "confused"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "scared eyes",
+	Callback = function()
+      		local args = {
+    [1] = "shocked"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "glad",
+	Callback = function()
+      		local args = {
+    [1] = "glad"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Enraged",
+	Callback = function()
+      		local args = {
+    [1] = "enraged"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "normal eyes (Might Not Work)",
+	Callback = function()
+      		local args = {
+    [1] = "RegularEyes"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.expressions:FireServer(unpack(args))
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Other",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+local Section = Tab:AddSection({
+	Name = "Some recomended scripts it you are gonna make a script also"
+})
+
+--[[
+Name = <string> - The name of the section.
+]]
+
+Tab:AddButton({
+	Name = "Keyless Mobile DEX-Explorer",
+	Callback = function()
+      		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Keyless-mobile-dex-17888"))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Mobile Simplespy v3",
+	Callback = function()
+      		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-RemoteSpy-For-Mobile-6609"))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Infinite yield v6",
+	Callback = function()
+      		loadstring(game:HttpGet("https://rawscripts.net/raw/Infinite-Yield_500"))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Keyboard to toggle my gui if you are on mobile",
+	Callback = function()
+      		loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Mobile-keyboard-6975"))()
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Disable reset button and being reset",
+	Callback = function()
+      		local player = game.Players.LocalPlayer
+
+-- Disable the reset button
+player:SetAttribute("CanReset", false)
+
+-- Function to prevent death
+local function preventDeath(character)
+    local humanoid = character:WaitForChild("Humanoid")
+
+    -- Prevent the player from dying by setting their health to maximum if it drops
+    humanoid:GetPropertyChangedSignal("Health"):Connect(function()
+        if humanoid.Health < humanoid.MaxHealth then
+            humanoid.Health = humanoid.MaxHealth
+        end
+    end)
+
+    -- Optionally, you can make the humanoid invulnerable
+    humanoid:SetStateEnabled(Enum.HumanoidStateType.Dead, false)
+end
+
+-- Connect the function to the player's character
+player.CharacterAdded:Connect(preventDeath)
+if player.Character then
+    preventDeath(player.Character)
+end
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Heal gui (first load this)",
+	Callback = function()
+      		local screenGui = Instance.new("ScreenGui")
+local button = Instance.new("TextButton")
+
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+button.Size = UDim2.new(0, 50, 0, 50)
+button.Position = UDim2.new(1, -110, 0, 10)
+button.BackgroundColor3 = Color3.fromRGB(173, 216, 230) -- Light Blue
+button.Text = "1"
+button.Font = Enum.Font.GothamBold
+button.TextSize = 24
+button.TextColor3 = Color3.new(1, 1, 1)
+button.BorderSizePixel = 0
+button.BackgroundTransparency = 0.5
+button.AutoButtonColor = false
+
+-- Make the button circular
+button.ClipsDescendants = true
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0.5, 0)
+corner.Parent = button
+
+button.Parent = screenGui
+
+button.MouseButton1Click:Connect(function()
+    local args = {
+    [1] = "healing"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.abilities:FireServer(unpack(args))
+
+end)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Heal gui (and second load this)",
+	Callback = function()
+      		local screenGui = Instance.new("ScreenGui")
+local button = Instance.new("TextButton")
+
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+button.Size = UDim2.new(0, 50, 0, 50)
+button.Position = UDim2.new(1, -110, 0, 60)
+button.BackgroundColor3 = Color3.fromRGB(173, 216, 230) -- Light Blue
+button.Text = "2"
+button.Font = Enum.Font.GothamBold
+button.TextSize = 24
+button.TextColor3 = Color3.new(1, 1, 1)
+button.BorderSizePixel = 0
+button.BackgroundTransparency = 0.5
+button.AutoButtonColor = false
+
+-- Make the button circular
+button.ClipsDescendants = true
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0.5, 0)
+corner.Parent = button
+
+button.Parent = screenGui
+
+button.MouseButton1Click:Connect(function()
+    local args = {
+    [1] = "heal",
+    [2] = game:GetService("Players").LocalPlayer.Character
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.abilities:FireServer(unpack(args))
+end)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+Tab:AddButton({
+	Name = "Cream glide script gui",
+	Callback = function()
+      		local screenGui = Instance.new("ScreenGui")
+local button = Instance.new("TextButton")
+
+screenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+button.Size = UDim2.new(0, 75, 0, 75)
+button.Position = UDim2.new(1, -110, 0, 140)
+button.BackgroundColor3 = Color3.fromRGB(173, 216, 230) -- Light Blue
+button.Text = "Glide"
+button.Font = Enum.Font.GothamBold
+button.TextSize = 24
+button.TextColor3 = Color3.new(1, 1, 1)
+button.BorderSizePixel = 0
+button.BackgroundTransparency = 0.5
+button.AutoButtonColor = false
+
+-- Make the button circular
+button.ClipsDescendants = true
+local corner = Instance.new("UICorner")
+corner.CornerRadius = UDim.new(0.5, 0)
+corner.Parent = button
+
+button.Parent = screenGui
+
+button.MouseButton1Click:Connect(function()
+    local args = {
+    [1] = "cream glide"
+}
+
+game:GetService("ReplicatedStorage").remoteEvents.abilities:FireServer(unpack(args))
+end)
+  	end    
+})
+
+--[[
+Name = <string> - The name of the button.
+Callback = <function> - The function of the button.
+]]
+
+local Tab = Window:MakeTab({
+	Name = "Update Logs",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+--[[
+Name = <string> - The name of the tab.
+Icon = <string> - The icon of the tab.
+PremiumOnly = <bool> - Makes the tab accessible to Sirus Premium users only.
+]]
+
+Tab:AddParagraph("Mini Update 10/6/2024","Just A Mini Update, Added Some Missing Stuff And Fixed Some Stuff Not Working.")
